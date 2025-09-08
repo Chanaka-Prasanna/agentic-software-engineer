@@ -1,0 +1,5 @@
+/venv
+/.env
+/agent/generated_project
+__pycache__/
+/.idea
