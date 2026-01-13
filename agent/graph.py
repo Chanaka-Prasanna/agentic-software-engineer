@@ -3,9 +3,9 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from dotenv import load_dotenv
 from langchain.globals import set_verbose, set_debug
 from langgraph.prebuilt import create_react_agent
-from prompts import *
-from states import *
-from tools import *
+from .prompts import *
+from .states import *
+from .tools import *
 from langgraph.constants import END
 from langgraph.graph import StateGraph
 
@@ -82,7 +82,3 @@ graph.set_entry_point("planner")
 
 agent = graph.compile()
 
-if __name__ == "__main__":
-    user_prompt="Create a simple calculator web application"
-    result = agent.invoke({"user_prompt":user_prompt}, {"recursion_limit":100})
-    print(result)
